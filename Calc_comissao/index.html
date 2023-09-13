@@ -11,82 +11,84 @@
         <!--                         Conatiner                               -->
         <div class="container">
             <div id="inicio">
-                <div>
-                    <h1 id="titulo">Calculadora de Comissão</h1>
+                <h1 id="titulo">Calculadora de Comissão</h1>
 
-                    <!--                       Formulário                                -->
-                    <form id="form" action="">
+                <!--                       Formulário                                -->
+                <form id="form" action="">
+                    <input
+                        type="number"
+                        class="venda"
+                        id="vendaid"
+                        placeholder="Valor da venda"
+                        step="0.01"
+                        min="0.01"
+                    />
+                    <fieldset class="tem">
+                        <legend>Tem</legend>
+                        <label for="frete">Frete</label>
                         <input
                             type="number"
-                            class="venda"
-                            id="vendaid"
-                            placeholder="Valor da venda"
-                            step="0.01"
-                            min="0.01"
+                            name="frete"
+                            id="frete"
+                            value="0"
+                        /><br />
+                        <label for="cimento">Cimento</label>
+                        <input
+                            type="number"
+                            name="cimento"
+                            id="cimento"
+                            value="0"
+                        /><br />
+                        <label for="Telha">Telha</label>
+                        <input
+                            type="number"
+                            name="telha"
+                            id="telha"
+                            value="0"
                         />
-                        <fieldset class="tem">
-                            <legend>Tem</legend>
-                            <label for="frete">Frete</label>
-                            <input
-                                type="number"
-                                name="frete"
-                                id="frete"
-                                value="0"
-                            /><br />
-                            <label for="cimento">Cimento</label>
-                            <input
-                                type="number"
-                                name="cimento"
-                                id="cimento"
-                                value="0"
-                            /><br />
-                            <label for="Telha">Telha</label>
-                            <input
-                                type="number"
-                                name="telha"
-                                id="telha"
-                                value="0"
-                            />
-                        </fieldset>
-                        <fieldset class="pagamento">
-                            <legend>Pagamento</legend>
-                            <label for="avista">A vista</label>
-                            <input
-                                type="radio"
-                                name="pagamento"
-                                id="avista"
-                                checked
-                            />
-                            <label for="cartao" id="prazo">Cartão</label>
-                            <input type="radio" name="pagamento" id="cartao" />
-                            <label for="boleto" id="bol">Boleto</label>
-                            <input type="radio" name="pagamento" id="boleto" />
-                        </fieldset>
-                        <fieldset class="pagamento">
-                            <legend>Parcelas</legend>
-                            <select name="vezes" id="vezes">
-                                <option value="0">Escolha</option>
-                                <option value="1">1x</option>
-                                <option value="2">2x</option>
-                                <option value="3">3x</option>
-                                <option value="4">4x</option>
-                                <option value="5">5x</option>
-                                <option value="6">6x</option>
-                                <option value="7">7x</option>
-                                <option value="8">8x</option>
-                                <option value="9">9x</option>
-                                <option value="10">10x</option>
-                            </select>
-                        </fieldset>
-                    </form>
-                </div>
+                    </fieldset>
+                    <fieldset class="pagamento">
+                        <legend>Pagamento</legend>
+                        <label for="avista">A vista</label>
+                        <input
+                            type="radio"
+                            name="pagamento"
+                            id="avista"
+                            checked
+                        />
+                        <label for="cartao" id="prazo">Cartão</label>
+                        <input type="radio" name="pagamento" id="cartao" />
+                        <label for="boleto" id="bol">Boleto</label>
+                        <input type="radio" name="pagamento" id="boleto" />
+                    </fieldset>
+                    <fieldset class="pagamento">
+                        <legend>Parcelas</legend>
+                        <select name="vezes" id="vezes">
+                            <option value="0">Escolha</option>
+                            <option value="1">1x</option>
+                            <option value="2">2x</option>
+                            <option value="3">3x</option>
+                            <option value="4">4x</option>
+                            <option value="5">5x</option>
+                            <option value="6">6x</option>
+                            <option value="7">7x</option>
+                            <option value="8">8x</option>
+                            <option value="9">9x</option>
+                            <option value="10">10x</option>
+                        </select>
+                    </fieldset>
+                </form>
+
                 <!-- Resultado -->
                 <div id="resultado">R$ 0,00</div>
                 <!--                            Botões  e Inputs                         -->
                 <div id="botoes">
-                    <input type="submit" value="Calcular" id="bt-calcular" />
-                    <input type="submit" value="Zerar" id="bt-zerar" />
-                    <button onclick="atualizarVendas()">Vendas</button>
+                    <button class="btn" id="bt-calcular">Calcular</button>
+                    <button class="btn" id="bt-zerar">Zerar</button>
+
+                    <button class="btn" onclick="atualizarVendas()">
+                        Vendas
+                    </button>
                 </div>
             </div>
             <!--            Tabela de valores                                         -->
@@ -103,13 +105,13 @@
                         <tbody id="tabela-body"></tbody>
                         <tfoot id="tabela-foot"></tfoot>
                     </table>
-                    <div id="btn_final">
-                        <button><a href="#inicio">Início</a></button>
-                        <button onclick="zerarDia()" id="btn_zerar_dia">
-                            Zerar dia
-                        </button>
-                    </div>
                 </fieldset>
+                <div id="btn_final">
+                    <button class="btn"><a href="#inicio">Início</a></button>
+                    <button class="btn" onclick="zerarDia()" id="btn_zerar_dia">
+                        Zerar dia
+                    </button>
+                </div>
             </div>
         </div>
 

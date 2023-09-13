@@ -25,37 +25,35 @@ btCalcular.addEventListener('click', function calcularComissao(evento) {
 
     evento.preventDefault();
 
-    const valor_descontado = venda - frete - cimento / 2 - telha / 2;
+    var valor_descontado = 0;
+    var valorFinal = 0;
 
     if (avista.checked) {
-        var valorFinal = valor_descontado;
-        resul.innerHTML = ` ${valorFinal.toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-        })}`;
+        valorFinal = venda;
     }
     if (cartao.checked) {
-        let valorcartao = valor_descontado - valor_descontado * 0.04;
-        var valorFinal = valorcartao - valorcartao * (vezes * 0.015);
-        resul.innerHTML = ` ${valorFinal.toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-        })}`;
+        let valorcartao = venda - venda * 0.04;
+        valorFinal = valorcartao - valorcartao * (vezes * 0.015);
     }
     if (boleto.checked) {
-        let valorboleto = valor_descontado - valor_descontado * 0.04;
-        var valorFinal =
-            valorboleto - valorboleto * (vezes * 0.015) - vezes * 3.5;
-        resul.innerHTML = `${valorFinal.toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-        })}`;
+        let valorboleto = venda - venda * 0.04;
+        valorFinal = valorboleto - valorboleto * (vezes * 0.015) - vezes * 3.5;
     }
 
-    let valor = { valor: valorFinal, venda: venda };
+    valor_descontado = valorFinal - frete - cimento / 2 - telha / 2;
+
+    resul.innerHTML = `${valor_descontado.toLocaleString('pt-br', {
+        style: 'currency',
+        currency: 'BRL',
+    })}`;
+
+    console.log(valor_descontado);
+
+    let valor = { valor: valor_descontado, venda: venda };
 
     listaValores(valor);
     criaElementos(valor);
+    form.reset();
 });
 
 //  CRIA UMA LISTA COM VALORES E ADICONA EM MEMÓRIA

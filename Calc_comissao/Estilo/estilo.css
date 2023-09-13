@@ -2,9 +2,9 @@
 
 :root {
     --font-family: 'Mulish', sans-serif;
-    --bg-color: #4ecca3;
-    --primary-color: #232931;
-    --secundary-color: #eeeeee;
+    --bg-color: #040d12;
+    --primary-color: #eeeeee;
+    --secundary-color: #404258;
 }
 
 * {
@@ -23,14 +23,21 @@ body {
 #inicio {
     width: 100vw;
     height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
 }
 
-form {
-    margin-top: 20px;
-    font-size: 15px;
-    color: var(--primary-color);
-    display: grid;
-    justify-items: center;
+#form {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
 
 #form input {
@@ -39,14 +46,12 @@ form {
 }
 
 fieldset {
-    margin-top: 20px;
     border-radius: 20px;
 }
 
 #titulo {
-    margin-top: 20px;
     color: var(--primary-color);
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -65,54 +70,17 @@ fieldset {
     height: 30px;
 }
 
-/* BOTÕES */
-
-#botoes {
-    position: absolute;
-    bottom: 6px;
-    left: 5vw;
-}
-
-#btn_final {
-    position: absolute;
-    bottom: -200vh;
-    left: 20vw;
-}
-
-#botoes input,
-button {
-    height: 5vh;
-    width: 30vw;
-    margin-top: 10px;
-    border-radius: 20px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-button a {
-    text-decoration: none;
-}
-
-#resultado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-    color: var(--secundary-color);
-    font-size: 35px;
-    font-weight: bold;
-    margin-top: 30%;
-}
-
 .venda {
-    width: 220px;
+    width: 300px;
     height: 50px;
     font-size: 20px;
+    margin-bottom: 30px;
+    box-shadow: 3px 3px var(--secundary-color);
 }
 
 .tem {
     text-align: center;
-    width: 270px;
+    width: 300px;
 }
 
 .pagamento {
@@ -128,6 +96,47 @@ button a {
     margin-left: 15px;
 }
 
+#resultado {
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: bold;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+/* BOTÕES */
+
+#botoes {
+    position: absolute;
+    bottom: 6px;
+}
+
+#btn_final {
+    position: sticky;
+    bottom: 6px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+/*
+#botoes input,
+button {
+    height: 5vh;
+    width: 30vw;
+    margin-top: 10px;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 29px 29px 58px #a6a6a6, -29px -29px 58px #ffffff;
+}
+ */
+button a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 /* TABELA COM VALORES */
 
 .tabela {
@@ -136,6 +145,7 @@ button a {
     height: 100vh;
     text-transform: uppercase;
     padding-top: 30px;
+    color: var(--primary-color);
 }
 
 .tabela fieldset {
@@ -167,8 +177,7 @@ button a {
 #tabela-foot {
     font-size: 20px;
     font-weight: bolder;
-    background-color: var(--primary-color);
-    color: var(--secundary-color);
+    color: var(--primary-color);
     height: 50px;
 }
 
@@ -176,4 +185,24 @@ button a {
     width: 25px;
     height: 25px;
     margin-bottom: 7px;
+}
+
+/* CONFIGURAÇÃO DE BOTÃO EXTERNA */
+.btn {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    background: var(--bg-color);
+    box-shadow: 3px 3px var(--primary-color);
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }
