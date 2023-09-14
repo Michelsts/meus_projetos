@@ -145,7 +145,7 @@ function deletaElemento(tag, id) {
     tag.remove();
 
     itens.splice((
-        itens.findIndex((elemento) => elemento.id === id))+1,
+        itens.findIndex(elemento) => elemento.id === id),
         1
     );
 
