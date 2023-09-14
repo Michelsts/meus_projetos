@@ -144,8 +144,8 @@ function botaoDeleta() {
 function deletaElemento(tag, id) {
     tag.remove();
 
-    itens.splice(
-        itens.findIndex((elemento) => elemento.id === id),
+    itens.splice((
+        itens.findIndex((elemento) => elemento.id === id))+1,
         1
     );
 
