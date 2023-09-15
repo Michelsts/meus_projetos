@@ -47,8 +47,6 @@ btCalcular.addEventListener('click', function calcularComissao(evento) {
         currency: 'BRL',
     })}`;
 
-    console.log(valor_descontado);
-
     let valor = { valor: valor_descontado, venda: venda };
 
     listaValores(valor);
@@ -126,7 +124,6 @@ function somaTotalDasVendas(itens) {
 }
 
 // FUNÇÃO PARA ADICIONAR O BOTÃO DELETAR
-
 function botaoDeleta() {
     const elementoBotao = document.createElement('button');
     elementoBotao.setAttribute('class', 'btn_x');
@@ -141,13 +138,8 @@ function botaoDeleta() {
 
 // FUNÇÃO CHAMADA PARA DELETAR ITEM
 
-function deletaElemento(tag, id) {
-    tag.remove();
-
-    itens.splice(
-        itens.findIndex((elemento) => elemento.id === id),
-        1
-    );
+function deletaElemento(tag) {
+    itens.splice(tag.rowIndex - 1, 1);
 
     localStorage.setItem('itens', JSON.stringify(itens));
 
